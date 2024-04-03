@@ -7,5 +7,49 @@ color: black;
 }
 
 body {
-	background-color:beige;
+	background-color:rgb(247, 247, 231);
+}
+
+.velkommen {
+	text-align: center;
+	margin-top: 7ch;
+	font-size: 30px;
+}
+
+
+.login {
+	text-align: center;
+	align-items: center;
+	margin: auto;
+	border: 2px solid #000;
+	margin-top: 15ch;
+	width: 400px;
+	height: 200px;
+	background-color: white;
+}
+
+.registrering {
+	text-align: center;
+	align-items: center;
+	margin: auto;
+	border: 2px solid #000;
+	margin-top: 15ch;
+	width: 400px;
+	height: 200px;
+	background-color: white;
+}
+
+.btn {
+	margin-top: 21px;
+}
+
+.velk-hr {
+	max-width: 75%;
+	margin-top: -20px;
+	background-color:#000;
+}
+
+.regsidelink {
+	font-size: 20px;
+	text-align: center;
 }

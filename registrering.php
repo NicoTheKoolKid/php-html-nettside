@@ -11,21 +11,16 @@
 </head>
 <body>
 
-<div class="velkommen">
-<h1>Velkommen til Rise Bycicles!</h1>
-</div>
-<hr class="velk-hr">
 
 
-<div class="login">
-<h1>Logg inn</h1>
+<div class="registrering">
+<h1>Registrer deg</h1>
 
 
 <input type="text" name="username" placeholder="Brukernavn" required>
 <input type="password" name="password" placeholder="Passord" required>
-<button type="submit" class="btn">Logg inn</button>
 <a href="registrering.php">
-    <button type="submit" class="btn">Registrer deg her!</button>
+    <button type="submit" class="btn">Registrer deg</button>
 </a>
 </form>
 </div>
