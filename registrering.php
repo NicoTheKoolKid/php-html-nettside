@@ -1,3 +1,74 @@
+<?php
+session_start();
+ 
+// Include config file
+require_once "config.php";
+ 
+// Define variables and initialize with empty values
+$username = $password = "";
+ 
+// Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ 
+    // Validate username
+    if (empty(trim($_POST["username"])) || empty(trim($_POST["password"]))) {
+        echo "Please enter a username and a password.";
+    } else {
+        // Prepare a select statement
+        $sql = "SELECT id FROM innlogging WHERE username = ?";
+ 
+        if ($stmt = mysqli_prepare($conn, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+ 
+            // Set parameters
+            $param_username = trim($_POST["username"]);
+ 
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+ 
+                if (mysqli_stmt_num_rows($stmt) == 0) {
+                    $username = trim($_POST["username"]);
+                    $password = password_hash(trim($_POST["password"]), PASSWORD_DEFAULT);
+ 
+                    // Prepare an insert statement
+                    $sql = "INSERT INTO innlogging (username, password) VALUES (?, ?)";
+ 
+                    if ($stmt = mysqli_prepare($conn, $sql)) {
+                        // Bind variables to the prepared statement as parameters
+                        mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+ 
+                        // Set parameters
+                        $param_username = $username;
+                        $param_password = $password;
+ 
+                        // Attempt to execute the prepared statement
+                        if (mysqli_stmt_execute($stmt)) {
+                            // Redirect to login page
+                            header("location: index.php");
+                            exit();
+                        } else {
+                            echo "Something went wrong. Please try again later.";
+                        }
+                    }
+                } else {
+                    echo "This username is already taken.";
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+ 
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+    mysqli_close($conn);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,12 +87,10 @@
 <div class="registrering">
 <h1>Registrer deg</h1>
 
-
+<form method="post">
 <input type="text" name="username" placeholder="Brukernavn" required>
 <input type="password" name="password" placeholder="Passord" required>
-<a href="registrering.php">
     <button type="submit" class="btn">Registrer deg</button>
-</a>
 </form>
 </div>
 

@@ -12,7 +12,7 @@ body {
 
 .velkommen {
 	text-align: center;
-	margin-top: 7ch;
+	margin-top: 2ch;
 	font-size: 30px;
 }
 
@@ -24,7 +24,7 @@ body {
 	border: 2px solid #000;
 	margin-top: 15ch;
 	width: 400px;
-	height: 200px;
+	height: 300px;
 	background-color: white;
 }
 
@@ -39,9 +39,6 @@ body {
 	background-color: white;
 }
 
-.btn {
-	margin-top: 21px;
-}
 
 .velk-hr {
 	max-width: 75%;
@@ -52,4 +49,34 @@ body {
 .regsidelink {
 	font-size: 20px;
 	text-align: center;
+}
+
+.logobilde {
+	margin-left: 155ch;
+	margin-bottom: -36ch;
+	position: sticky;
+}
+
+.btn {
+	position: absolute;
+	margin-top: 3.7ch;
+	margin-left: -41.35ch;
+	width: 345px;
+	height: 37px;
+	font-size: 15px;
+}
+
+.reg-btn {
+	position: absolute;
+	margin-top: 6.5ch;
+	margin-left: -20.71ch;
+	width: 345px;
+	height: 37px;
+	font-size: 15px;
+}
+
+.g-recaptcha {
+	position: absolute;
+	margin-top: 13.3ch;
+	margin-left: 6ch;
 }

@@ -15,7 +15,7 @@
  
 <h1>Min Profil</h1>
 <p>Velkommen, <?php echo $_SESSION["username"]; ?>!</p>
-<a href="logout.php"><button type="submit">Logg ut</button></a>
+<a href="index.php"><button type="submit">Logg ut</button></a>
  
  
  
