@@ -11,13 +11,17 @@
 </head>
 <body>
  
+<?php
+session_start(); // Start sesjonen (hvis ikke allerede startet)
 
- 
-<h1>Min Profil</h1>
-<p>Velkommen, <?php echo $_SESSION["username"]; ?>!</p>
-<a href="index.php"><button type="submit">Logg ut</button></a>
- 
- 
+// Sjekk om brukeren er logget inn
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username']; // Hent brukernavnet fra sesjonen
+    echo "Velkommen, $username!"; // Vis velkomstmelding med brukernavnet
+} else {
+    echo "Velkommen, gjest!"; // Hvis ikke logget inn, vis standard velkomstmelding
+}
+?>
  
  
  

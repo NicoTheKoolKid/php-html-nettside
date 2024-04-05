@@ -53,8 +53,8 @@ body {
 
 .logobilde {
 	margin-left: 155ch;
-	margin-bottom: -36ch;
-	position: sticky;
+	margin-bottom: -28ch;
+	position: absolute;
 }
 
 .btn {
