@@ -10,22 +10,29 @@
     ?>
 </head>
 <body>
- 
+
+
+
+<div>
+    <a href="index.php"><button type="submit" class="logout">Logg ut</button></a>
+</div> 
+
+<h1 id="idx2os">Rise Bicycles</h1>
+
 <?php
 session_start(); // Start sesjonen (hvis ikke allerede startet)
 
 // Sjekk om brukeren er logget inn
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username']; // Hent brukernavnet fra sesjonen
-    echo "Velkommen, $username!"; // Vis velkomstmelding med brukernavnet
-} else {
-    echo "Velkommen, gjest!"; // Hvis ikke logget inn, vis standard velkomstmelding
-}
+    echo "<h2> Velkommen, $username!</h2>"; // Vis velkomstmelding som en overskrift
+} 
 ?>
- 
- 
- 
- 
+
+<hr>
+
+
+<img src="Bilder/RiseLogo.png" alt="Rise Bicycles Logo" class="logobilde" width="140px" id="logobilde2"> 
  
 </body>
 </html>

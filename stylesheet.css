@@ -39,7 +39,6 @@ body {
 	background-color: white;
 }
 
-
 .velk-hr {
 	max-width: 75%;
 	margin-top: -20px;
@@ -52,9 +51,9 @@ body {
 }
 
 .logobilde {
-	margin-left: 155ch;
-	margin-bottom: -28ch;
-	position: absolute;
+	margin-left: 154ch;
+	margin-bottom: -24ch;
+	position: sticky;
 }
 
 .btn {
@@ -80,3 +79,34 @@ body {
 	margin-top: 13.3ch;
 	margin-left: 6ch;
 }
+
+.logout {	
+	margin-left: 1245px;
+	margin-top: 4px;
+	position: absolute;
+	width: 130px;
+	height: 50px;
+	font-size: 15px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#idx2os {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 25px;
+}
+
+h2 {
+	position: absolute;
+	margin-top: -73px;
+	padding-left: 10px;
+}
+
+#logobilde2 {
+	margin-left: 154ch;
+	margin-bottom: -77ch;
+	position: sticky;
+}
+
+
+ 
