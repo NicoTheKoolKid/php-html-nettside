@@ -41,6 +41,8 @@ $db = new PDO('mysql:host=localhost;dbname=rise bicycles;charset=utf8', 'root', 
 // Hent syklene
 $resultat = $db->query('SELECT * FROM sykkelinfo');
 
+echo '<div class="sykkelinfo">';
+
 // Loop gjennom hver sykkelinfo og vis den
 foreach ($resultat as $sykkelinfo) {
     echo '<div class="sykkelinfo">';
@@ -51,7 +53,7 @@ foreach ($resultat as $sykkelinfo) {
     echo '<p>Farge: ' . $sykkelinfo['Farge'] . '</p>';
     echo '<p>Produksjonsår: ' . $sykkelinfo['Produksjonsår'] . '</p>';
     echo '<p>Bremsetype: ' . $sykkelinfo['Bremsetype'] . '</p>';
-    echo '</div>';
+
 }
 ?>
 </div>
