@@ -31,6 +31,31 @@ if (isset($_SESSION['username'])) {
 
 <hr>
 
+<div id="sykler">
+<?php
+
+
+// Koble til databasen
+$db = new PDO('mysql:host=localhost;dbname=rise bicycles;charset=utf8', 'root', '');
+
+// Hent syklene
+$resultat = $db->query('SELECT * FROM sykkelinfo');
+
+// Loop gjennom hver sykkelinfo og vis den
+foreach ($resultat as $sykkelinfo) {
+    echo '<div class="sykkelinfo">';
+    echo '<h2>' . $sykkelinfo['Merke'] . ' - ' . $sykkelinfo['Type'] . '</h2>';
+    echo '<img src="' . $sykkelinfo['Bilde'] . '" alt="' . $sykkelinfo['Merke'] . ' sykkelinfo">';
+    echo '<p>Pris: ' . $sykkelinfo['Pris'] . '</p>';
+    echo '<p>Bruker: ' . $sykkelinfo['Bruker'] . '</p>';
+    echo '<p>Farge: ' . $sykkelinfo['Farge'] . '</p>';
+    echo '<p>Produksjonsår: ' . $sykkelinfo['Produksjonsår'] . '</p>';
+    echo '<p>Bremsetype: ' . $sykkelinfo['Bremsetype'] . '</p>';
+    echo '</div>';
+}
+?>
+</div>
+
 
 <img src="Bilder/RiseLogo.png" alt="Rise Bicycles Logo" class="logobilde" width="140px" id="logobilde2"> 
  
