@@ -109,8 +109,47 @@ h2 {
 	position: absolute;
 }
 
-.sykkelinfo{
-	margin-top: 100px;
-	position:static;
-	justify-content: center;
+.sykkelinfo {
+    margin-top: 100px;
+    position: static;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Endret fra space-around */
+    flex-wrap: wrap; /* Legg til wrap for å få 3 sykler per rad */
+    max-width: 900px; /* Legg til en maks bredde for å begrense antall sykler per rad */
+    margin: 0 auto; /* Sentrer containeren horisontalt */
+}
+
+.box {
+    border: 1px solid black;
+    width: calc(33.33% - 20px); /* Beregnet bredde for 3 sykler per rad med litt mellomrom */
+	height:275px;
+    text-align: center;
+    margin: 5px;
+	margin-bottom: 20px;
+    box-sizing: border-box; /* Inkluder padding i beregningen */
+}
+
+.box img {
+    width: 100%;
+}
+
+.box .info {
+    padding: 10px;
+}
+
+.box .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    padding: 10px;
+}
+
+#boxtext {
+    font-size: 20px;
+    text-align:center;
+	padding-left:30px;
 }

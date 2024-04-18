@@ -31,32 +31,31 @@ if (isset($_SESSION['username'])) {
 
 <hr>
 
-<div id="sykler">
-<?php
 
+<?php
 
 // Koble til databasen
 $db = new PDO('mysql:host=localhost;dbname=rise bicycles;charset=utf8', 'root', '');
+// Hent syklene'
 
-// Hent syklene
 $resultat = $db->query('SELECT * FROM sykkelinfo');
 
-echo '<div class="sykkelinfo">';
-
+echo '<div class="container">';
 // Loop gjennom hver sykkelinfo og vis den
 foreach ($resultat as $sykkelinfo) {
-    echo '<div class="sykkelinfo">';
-    echo '<h2>' . $sykkelinfo['Merke'] . ' - ' . $sykkelinfo['Type'] . '</h2>';
-    echo '<img src="' . $sykkelinfo['Bilde'] . '" alt="' . $sykkelinfo['Merke'] . ' sykkelinfo">';
-    echo '<p>Pris: ' . $sykkelinfo['Pris'] . '</p>';
-    echo '<p>Bruker: ' . $sykkelinfo['Bruker'] . '</p>';
-    echo '<p>Farge: ' . $sykkelinfo['Farge'] . '</p>';
-    echo '<p>Produksjonsår: ' . $sykkelinfo['Produksjonsår'] . '</p>';
-    echo '<p>Bremsetype: ' . $sykkelinfo['Bremsetype'] . '</p>';
-
+    echo '<div class="box">';
+    echo '<img src="' . $sykkelinfo[''] . '" alt="' . $sykkelinfo['Merke'] . ' sykkelinfo">';
+    echo '<div class="info"><h2 id="boxtext">' . $sykkelinfo['Merke'] . ' - ' . $sykkelinfo['Type'] . '</h2>';
+    echo 'Bruker: ' . $sykkelinfo['Bruker'] . '<br>';
+    echo 'Farge: ' . $sykkelinfo['Farge'] . '<br>';
+    echo 'Produksjonsår: ' . $sykkelinfo['Produksjonsår'] . '<br>';
+    echo 'Bremsetype: ' . $sykkelinfo['Bremsetype'] . '</div>';
+    echo '<div class="price">Pris: ' . $sykkelinfo['Pris'] . '</div>';
+    echo '</div>';
 }
+echo '</div>';
+
 ?>
-</div>
 
 
 <img src="Bilder/RiseLogo.png" alt="Rise Bicycles Logo" class="logobilde" width="140px" id="logobilde2"> 
