@@ -104,8 +104,8 @@ h2 {
 }
 
 #logobilde2 {
-	margin-left: 154ch;
-	margin-bottom: -77ch;
+	margin-left: 153ch;
+	padding-bottom: 10px;
 	position: absolute;
 }
 
@@ -131,6 +131,11 @@ h2 {
     margin: 5px;
 	margin-bottom: 20px;
     box-sizing: border-box; /* Inkluder padding i beregningen */
+	transition: transform 0.3s ease;
+}
+
+.box:hover {
+	transform: scale(1.05);
 }
 
 .box img {
@@ -159,6 +164,11 @@ h2 {
 	padding-left:5px;
 	position: static;
 	width: 250px;
+	transition: transform 0.3s ease;
+}
+
+.boxbilde:hover {
+	transform: scale(1.15);
 }
 
 .boksinfotekst {

@@ -136,6 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 </div>
 
+
 <img src="Bilder/RiseLogo.png" alt="Rise Bicycles Logo" class="logobilde" width="140px" class="logobilde">
  
 </body>
