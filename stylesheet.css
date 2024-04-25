@@ -126,7 +126,7 @@ h2 {
 .box {
     border: 1px solid black;
     width: calc(33.33% - 20px); /* Beregnet bredde for 3 sykler per rad med litt mellomrom */
-	height:275px;
+	height:500px;
     text-align: center;
     margin: 5px;
 	margin-bottom: 20px;
@@ -144,12 +144,24 @@ h2 {
 .box .price {
     font-size: 20px;
     font-weight: bold;
-    color: red;
     padding: 10px;
 }
 
-#boxtext {
+#boxtextH2 {
+	position:static;
     font-size: 20px;
-    text-align:center;
-	padding-left:30px;
+    text-align: center;
+	padding-top: 90px;
+}
+
+.boxbilde {
+	padding-top:20px;
+	padding-left:5px;
+	position: static;
+	width: 250px;
+}
+
+.boksinfotekst {
+	padding-top: 5px;
+	font-size: 17px;
 }

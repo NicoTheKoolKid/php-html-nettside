@@ -44,13 +44,15 @@ echo '<div class="container">';
 // Loop gjennom hver sykkelinfo og vis den
 foreach ($resultat as $sykkelinfo) {
     echo '<div class="box">';
-    echo '<img src="' . $sykkelinfo[''] . '" alt="' . $sykkelinfo['Merke'] . ' sykkelinfo">';
-    echo '<div class="info"><h2 id="boxtext">' . $sykkelinfo['Merke'] . ' - ' . $sykkelinfo['Type'] . '</h2>';
-    echo 'Bruker: ' . $sykkelinfo['Bruker'] . '<br>';
+    echo '<div class="info"><h2 id="boxtextH2">' . $sykkelinfo['Merke'] . ' - ' . $sykkelinfo['Type'] . '</h2>';
+
+    echo '<div class="boksinfotekst">' . 'Bruker: ' . $sykkelinfo['Bruker'] . '<br>';
     echo 'Farge: ' . $sykkelinfo['Farge'] . '<br>';
     echo 'Produksjonsår: ' . $sykkelinfo['Produksjonsår'] . '<br>';
     echo 'Bremsetype: ' . $sykkelinfo['Bremsetype'] . '</div>';
     echo '<div class="price">Pris: ' . $sykkelinfo['Pris'] . '</div>';
+    echo '<div class="boxbilde">' . '<img src="' . $sykkelinfo['Bilde'] . '" alt="' . $sykkelinfo['Merke'] . ' sykkelinfo">' . '</div>';
+    echo '</div>';
     echo '</div>';
 }
 echo '</div>';
