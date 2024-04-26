@@ -47,12 +47,11 @@ echo '<div class="container">';
 foreach ($resultat as $sykkelinfo) {
     echo '<div class="box">';
     echo '<div class="info"><h2 id="boxtextH2">' . $sykkelinfo['Merke'] . ' - ' . $sykkelinfo['Type'] . '</h2>';
-
     echo '<div class="boksinfotekst">' . 'Bruker: ' . $sykkelinfo['Bruker'] . '<br>';
     echo 'Farge: ' . $sykkelinfo['Farge'] . '<br>';
     echo 'Produksjonsår: ' . $sykkelinfo['Produksjonsår'] . '<br>';
     echo 'Bremsetype: ' . $sykkelinfo['Bremsetype'] . '</div>';
-    echo '<div class="price">Pris: ' . $sykkelinfo['Pris'] . '</div>';
+    echo '<div class="price">Pris: ' . $sykkelinfo['Pris'] . 'kr' . '</div>';
     echo '<div class="boxbilde">' . '<img src="' . $sykkelinfo['Bilde'] . '" alt="' . $sykkelinfo['Merke'] . ' sykkelinfo">' . '</div>';
     echo '</div>';
     echo '</div>';

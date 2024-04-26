@@ -8,6 +8,8 @@ require_once "config.php";
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
+$email = $password = "";
+$email_err = $password_err = "";
  
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,6 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password_err = "Please enter your password.";
     } else {
         $password = trim($_POST["password"]);
+    }
+
+    // Check if password is empty
+    if (empty(trim($_POST["email"]))) {
+        $email_err = "Please enter your email.";
+    } else {
+        $email = trim($_POST["email"]);
     }
      
     $recaptchaResponse = $_POST['g-recaptcha-response'];
@@ -123,6 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <form method="post">
 <input type="text" name="username" placeholder="Brukernavn" required>
 <input type="password" name="password" placeholder="Passord" required>
+<input class="emailbox" type="email" name="email" placeholder="Email" required>
 <div class="g-recaptcha" data-sitekey="6LeuGa8pAAAAAJSD2mZJb0o-ziEMwitC53Qqesu8"></div>
 <button type="submit" class="btn">Logg inn</button>
 </form>

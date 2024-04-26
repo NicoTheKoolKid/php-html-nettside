@@ -24,7 +24,7 @@ body {
 	border: 2px solid #000;
 	margin-top: 15ch;
 	width: 400px;
-	height: 300px;
+	height: 350px;
 	background-color: white;
 }
 
@@ -52,14 +52,19 @@ body {
 
 .logobilde {
 	margin-left: 154ch;
-	margin-bottom: -24ch;
+	margin-bottom: -18ch;
 	position: sticky;
+}
+
+.emailbox {
+	width: 337px;
+	margin-top: 5px;
 }
 
 .btn {
 	position: absolute;
-	margin-top: 3.7ch;
-	margin-left: -41.35ch;
+	margin-top: 5ch;
+	margin-left: -41.5ch;
 	width: 345px;
 	height: 37px;
 	font-size: 15px;
@@ -67,7 +72,7 @@ body {
 
 .reg-btn {
 	position: absolute;
-	margin-top: 6.5ch;
+	margin-top: 8ch;
 	margin-left: -20.71ch;
 	width: 345px;
 	height: 37px;
@@ -76,7 +81,7 @@ body {
 
 .g-recaptcha {
 	position: absolute;
-	margin-top: 13.3ch;
+	margin-top: 16ch;
 	margin-left: 6ch;
 }
 
@@ -135,7 +140,7 @@ h2 {
 }
 
 .box:hover {
-	transform: scale(1.05);
+	transform: scale(1.08);
 }
 
 .box img {

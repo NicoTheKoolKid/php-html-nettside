@@ -5,14 +5,14 @@ session_start();
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = "";
+$username = $password = $email = "";
  
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
     // Validate username
-    if (empty(trim($_POST["username"])) || empty(trim($_POST["password"]))) {
-        echo "Please enter a username and a password.";
+    if (empty(trim($_POST["username"])) || empty(trim($_POST["password"])) || empty(trim($_POST["email"]))) {
+        echo "Please enter a username, password and an email.";
     } else {
         // Prepare a select statement
         $sql = "SELECT id FROM innlogging WHERE username = ?";
@@ -31,18 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
                 if (mysqli_stmt_num_rows($stmt) == 0) {
                     $username = trim($_POST["username"]);
+                    $email = trim($_POST["email"]);
                     $password = password_hash(trim($_POST["password"]), PASSWORD_DEFAULT);
  
                     // Prepare an insert statement
-                    $sql = "INSERT INTO innlogging (username, password) VALUES (?, ?)";
+                    $sql = "INSERT INTO innlogging (username, password, email) VALUES (?, ?, ?)";
  
                     if ($stmt = mysqli_prepare($conn, $sql)) {
                         // Bind variables to the prepared statement as parameters
-                        mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+                        mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_email);
  
                         // Set parameters
                         $param_username = $username;
                         $param_password = $password;
+                        $param_email = $email;
  
                         // Attempt to execute the prepared statement
                         if (mysqli_stmt_execute($stmt)) {
@@ -90,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <form method="post">
 <input type="text" name="username" placeholder="Brukernavn" required>
 <input type="password" name="password" placeholder="Passord" required>
+<input class="emailbox" type="email" name="email" placeholder="email" required>
     <button type="submit" class="btn">Registrer deg</button>
 </form>
 </div>
